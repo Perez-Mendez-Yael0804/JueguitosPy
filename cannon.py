@@ -15,7 +15,7 @@ from turtle import *
 from freegames import vector
 
 ball = vector(-200, -200)
-speed = vector(0, 0)
+speed = vector(2, 2)
 targets = []
 
 
@@ -76,7 +76,7 @@ def move():
             # Eliminamos el return
             pass
 
-    ontimer(move, 50)
+    ontimer(move, 20)
 
 
 setup(520, 520, 370, 0) # Aumentamos el tamaño de la pantalla
