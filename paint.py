@@ -48,7 +48,7 @@ def rectangle(start, end):
     begin_fill()
 
     for count in range(4):
-        forward(end.x - start.x)
+        forward(end.x  - start.x)
         left(90)
 
     end_fill()
@@ -56,27 +56,47 @@ def rectangle(start, end):
 
 def triangle(start, end):
     """Draw triangle from start to end."""
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(2):
+        forward(end.x - start.x)
+        left(70)
+
+    end_fill()
+
 
 
 def tap(x, y):
     """Store starting point or draw shape."""
+    # En la variable start se guarda el valor que se va a modificar en el diccionario de state
     start = state['start']
 
+    # Si no hay un punto de inicio
     if start is None:
+        # El diccionario state en la key 'start' sera igual al vector en coordenadas x y 
         state['start'] = vector(x, y)
     else:
+        # La variable shape guarda el valor de la figura que hay en el diccionario
         shape = state['shape']
+        # El punto fin es el segundo clic que se le da en las coordenadas x y
         end = vector(x, y)
+        # 
         shape(start, end)
+        # Cierra la figura y vuelve a ponerle un valor nulo para que no haya ningún punto 
         state['start'] = None
 
 
 def store(key, value):
     """Store value in state at key."""
+    # El state lo evalua en la key y le asigna el valor
+    # Ejemplo: state['shape'] = line
+    # lo que nos dice que la función lambda en el state trabajará sobre la figura de la línea
     state[key] = value
 
-
+# Al iniciar el programa no hay punto de inicio y la figura por default es la línea
 state = {'start': None, 'shape': line}
 setup(420, 420, 370, 0)
 onscreenclick(tap)
@@ -89,6 +109,8 @@ onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 # Nuevo color
 onkey(lambda: color('yellow'), 'Y')
+# El shape es la llave(key) del diccionario y el valor es la figura
+# onkey(lo que va a hacer, la tecla que debe apretar)
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
