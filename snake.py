@@ -9,6 +9,40 @@ Exercises
 4. Change the snake to respond to mouse clicks.
 """
 
+import random
+
+comi = random.randint(1, 5)
+serp = random.randint(1, 5)
+
+if serp != comi:
+    if serp == 1:
+        color1='green'
+    if serp == 2:
+        color1='black'
+    if serp == 3:
+        color1='blue'
+    if serp == 4:
+        color1='purple'
+    if serp == 5:
+        color1='yellow'
+
+
+    if comi == 1:
+        color2='green'
+    if comi == 2:
+        color2='black'
+    if comi == 3:
+        color2='blue'
+    if comi == 4:
+        color2='purple'
+    if comi == 5:
+        color2='yellow'
+
+if serp == comi:
+    color1="black"
+    color2="green"
+
+
 from random import randrange
 from turtle import *
 
@@ -52,9 +86,9 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, color1)
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, color2)
     update()
     ontimer(move, 100)
 
