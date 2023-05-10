@@ -30,7 +30,7 @@ def tap(x, y):
 
 def inside(xy):
     """Return True if xy within screen."""
-    return -200 < xy.x < 200 and -200 < xy.y < 200
+    return -250 < xy.x < 250 and -250 < xy.y < 250
 
 
 def draw():
@@ -52,7 +52,7 @@ def move():
     """Move ball and targets."""
     if randrange(40) == 0:
         y = randrange(-150, 150)
-        target = vector(200, y)
+        target = vector(250, y)
         targets.append(target)
 
     for target in targets:
@@ -73,12 +73,13 @@ def move():
 
     for target in targets:
         if not inside(target):
-            return
+            # Eliminamos el return
+            pass
 
     ontimer(move, 50)
 
 
-setup(420, 420, 370, 0)
+setup(520, 520, 370, 0) # Aumentamos el tamaño de la pantalla
 hideturtle()
 up()
 tracer(False)
