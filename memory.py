@@ -32,7 +32,7 @@ taps = 0
 
 # Hace las casillas con los bordes 
 def square(x, y):
-    """Draw white square with black outline at (x, y)."""
+    """Dibuja las casillas con bordes negros en las coordenadas (x,y) que recibe en los parametros"""
     up()
     goto(x, y)
     down()
@@ -43,19 +43,17 @@ def square(x, y):
         left(90)
     end_fill()
 
-# Convierte a coordenadas x y las casillas en el indice marcado
 def index(x, y):
-    """Convert (x, y) coordinates to tiles index."""
+    """Convierte a coordenadas x y las casillas en el indice marcado"""
     return int((x + 200) // 50 + ((y + 200) // 50) * 8)
 
-# Convierte en casillas las coordenadas x y
 def xy(count):
-    """Convert tiles count to (x, y) coordinates."""
+    """Convierte en casillas las coordenadas x y"""
     return (count % 8) * 50 - 200, (count // 8) * 50 - 200
 
 # Es la función que marca cuando una casillas ha sido seleccionada 
 def tap(x, y):
-    """Update mark and hidden tiles based on tap."""
+    """Actualiza la marca de la casiila y la esconde según el tap"""
     global taps
     taps += 1
     spot = index(x, y)
@@ -76,7 +74,7 @@ def tap(x, y):
 
 # Dibuja la imagen cuando las casillas coinciden 
 def draw():
-    """Draw image and tiles."""
+    """Dibuja la imagen y las casillas"""
     clear()
     goto(0, 0)
     shape(car)
