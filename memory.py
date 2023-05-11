@@ -15,7 +15,12 @@ from turtle import *
 from freegames import path
 
 car = path('car.gif')
-tiles = list(range(32)) * 2
+tiles = [
+    '👻', '😱', '❤️', '😍', '😂', '👌', '😘', '😊',
+    '😎', '😉', '😏', '🤩', '😅', '😁', '😶', '😗',
+    '🤐', '😴', '🤗', '🤑', '🥱', '😤', '☹️', '😭', 
+    '😵‍💫', '🤬', '🤯', '🤢', '🤠', '🤓', '🤡', '👽'
+] * 2
 state = {'mark': None}
 hide = [True] * 64
 taps = 0
@@ -77,12 +82,7 @@ def draw():
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        if tiles[mark] >= 10:
-            goto(x + 5, y)
-        else:
-            goto(x + 15, y)
-
-        color('black')
+        goto(x + 5, y +5)
         write(tiles[mark], font=('Arial', 30, 'normal'))
 
     update()
