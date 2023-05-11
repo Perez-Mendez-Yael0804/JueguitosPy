@@ -1,5 +1,5 @@
 ![Logo del freegames](https://pypi.org/static/images/logo-small.2a411bc6.svg) 
-## Repositorio Proyecto Freegamesssss
+## Repositorio Proyecto Freegames
 ### Herramientas computacionales: El arte de la programación 
 
 Este repositorio se caracteriza por ser una herramienta de aprendizaje para los alumnos, en la cual se trabajaron cinco códigos de la librería 'freegames' en python, 
@@ -22,17 +22,22 @@ de esta manera se pretende que los alumnos adquieran los conocimientos sobre:
 Primero que nada es requisito tener el python 3.X, este lo puedes descargar directamente de la siguiente liga: https://www.python.org/downloads/
 
 ![Instalación python](https://github.com/Perez-Mendez-Yael0804/JueguitosPy/assets/72780700/7a1dd23f-2cf3-470d-98c8-671a6ccfbdb3)
-Se debe de dar clic en Downloads, tomando en cuenta para que sistema operativo usas
-Para poder utilizar este proyecto es necesario primero instalar la librería 'freegames', puedes utilizar el CMD, el PowerShell o instalar Git.
 
+Se debe de dar clic en Downloads, tomando en cuenta para que sistema operativo usas.
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+Normalmente en versiones de Python 2.7.9 (o superior) o Python 3.4 (o superior), PIP ya viene instalado con Python por defecto. Si está utilizando una versión anterior de Python, deberá seguir los pasos de instalación que se detallan a continuación.
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+<ol>
+<li>Descargue el script del instalador get-pip.py. Si estás en Python 3.2, necesitarás esta versión de get-pip.py. En caso de tener Python 3.3 o 3.4 usar estas versiones de PiP correspondientemente Python 3.3 get-pip.py o Python 3.4 get-pip.py. De cualquier manera, haga clic derecho en el enlace y seleccione Guardar como y guárdelo en cualquier carpeta del pc, como su carpeta de Descargas.</li>
+<li>Abra el símbolo del sistema y navegue hasta el archivo get-pip.py.</li>
+<li>Ejecute el siguiente comando: python get-pip.py</li>
+</ol>
 
-```
-Da un ejemplo
-```
+📝 Nota: Ejecutar la terminal (CMD o Powershell) con privilegios de administrador
+  
+El anterior proceso es solo tomado en cuenta para Windows, en caso de tener otro sistema operativo puedes consultar la siguiente liga: https://tecnonucleous.com/2018/01/28/como-instalar-pip-para-python-en-windows-mac-y-linux/
+
+Ahora lo que sigue es ver la instlación de la librería 'freegames'.
 
 ### Instalación 🔧
 
