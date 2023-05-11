@@ -18,8 +18,9 @@ ball = vector(-200, -200)
 speed = vector(2, 2)
 targets = []
 
-#El programa responde ante los taps/clics hechos en la ventana
+
 def tap(x, y):
+    """El programa responde ante los taps/clics hechos en la ventana - Recibe(x,y)"""
     #Asignación de posición y velocidad si la pelota se encuentra fuera de los límites
     if not inside(ball):
         ball.x = -199
@@ -27,13 +28,14 @@ def tap(x, y):
         speed.x = (x + 200) / 25
         speed.y = (y + 200) / 25
 
-#Duevuelve true en caso de que el vector se encuentre dentro de los límites establecidos
+
 def inside(xy):
-    
+    """Devuelve true en caso de que el vector se encuentre dentro de los límites establecidos - Recibe xy"""
     return -250 < xy.x < 250 and -250 < xy.y < 250
 
-#Función que dibujo los elementos correspondientes a la pelota y los distintos objetivos
+
 def draw():
+    """Función que dibuja los elementos correspondientes a la pelota y los distintos objetivos"""
     
     clear()
 
@@ -47,10 +49,11 @@ def draw():
 
     update()
 
-#Función que define el movimiento de la pelota simuando el tiro parabólico así como el de los objetivos teneindo movimiento constante hacia la izquierda
-#Teniendno en cuenta la desaparición de los objetivos en cuando entran en contacto con la pelota
+
+
 def move():
-  
+    """Función que define el movimiento de la pelota simuando el tiro parabólico así como el de los objetivos teneindo movimiento constante hacia la izquierda"""
+    #Teniendo en cuenta la desaparición de los objetivos en cuando entran en contacto con la pelota
     if randrange(40) == 0:
         y = randrange(-150, 150)
         target = vector(250, y)
@@ -72,9 +75,9 @@ def move():
         if abs(target - ball) > 13:
             targets.append(target)
 
-    #Dibujar los objetivos
+    
     draw()
-
+    """Dibujar los objetivos"""
     for target in targets:
         if not inside(target):
             # Eliminamos el return
@@ -83,15 +86,19 @@ def move():
     #Velocidad General del Juego
     ontimer(move, 20)
 
-#Definimos las dimenciones de la ventana para que salgan y entren los objetivos
+
 setup(520, 520, 370, 0) 
+"""#Definimos las dimenciones de la ventana para que salgan y entren los objetivos"""
+
 hideturtle()
 up()
 tracer(False)
 
-#Se manda a llamar la función correpondiente al funcionamiento de los clicks
-onscreenclick(tap)
 
-#Poder mover la bala de cañon y mantener abierta la ventana
+onscreenclick(tap)
+"""Se manda a llamar la función correpondiente al funcionamiento de los clicks - Recibe tap"""
+
+
 move()
 done()
+"""Poder mover la bala de cañon y mantener abierta la ventana"""
