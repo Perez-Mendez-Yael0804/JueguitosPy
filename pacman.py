@@ -59,7 +59,7 @@ tiles = [
 
 # Pinta los cuadros azules 
 def square(x, y):
-    """Draw square using path at (x, y)."""
+    """Dibuja el cuadrado usando la función path - Recibe coordenadas (x,y)"""
     path.up()
     path.goto(x, y)
     path.down()
@@ -73,7 +73,7 @@ def square(x, y):
 
 
 def offset(point):
-    """Return offset of point in tiles."""
+    """Devuelve el desplazamiento del punto en mosaicos. - Recibe point"""
     x = (floor(point.x, 20) + 200) / 20
     y = (180 - floor(point.y, 20)) / 20
     index = int(x + y * 20)
@@ -81,7 +81,7 @@ def offset(point):
 
 # Valida el punto 
 def valid(point):
-    """Return True if point is valid in tiles."""
+    """Retorna True si el punto es válido en mosaicos. - ecibe point"""
     index = offset(point)
 
     if tiles[index] == 0:
@@ -96,7 +96,7 @@ def valid(point):
 
 
 def world():
-    """Draw world using path."""
+    """Dibuja la cuadrícula de Pacman deacuerdo a los parámetros establecidos"""
     # Color del fondo
     bgcolor('black')
     # Color del camino
@@ -126,12 +126,12 @@ def world():
 
 
 def move():
-    """Move pacman and all ghosts."""
+    """Función que define el movimiento de PacMan y los fantasmas"""
     writer.undo()
     writer.write(state['score'])
 
     clear()
-    # pacman más la posición inicial 
+    """Pacman + la posición inicial"""
     if valid(pacman + aim):
         pacman.move(aim)
 
@@ -152,7 +152,8 @@ def move():
         if valid(point + course):
             point.move(course)
         else:
-            if pacman.x > point.x and pacman.y > point.y: #En esta serie de ifs se le dan opciones a los fantasmas que prioritizan el acercarse hacia el pacmanpara hacerlo mas desafiante
+            #Ciclos if que definen la inteligencia de los fantasmas al tener a Pacman cerca y priorizar el camino mas cercano aumentando su velocidad
+            if pacman.x > point.x and pacman.y > point.y: 
                 options = [
                 vector(10, 0),
                 vector(10, 0),
@@ -223,14 +224,14 @@ def move():
 
     ontimer(move, 35)
 
-# Cambia la dirección del pacman con las coordenadas x y 
+
 def change(x, y):
-    """Change pacman aim if valid."""
+    """Cambia la dirección del pacman con las coordenadas x y recibidas - Recibe (x,y)"""
     if valid(pacman + vector(x, y)):
         aim.x = x
         aim.y = y
 
-# Tamaño del tablero 
+# Tamaño de la ventana emergente 
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
