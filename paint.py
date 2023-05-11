@@ -15,7 +15,7 @@ from freegames import vector
 
 #Función que define la línea recta desde un punto inicial a un punto final definicod por cooredenadas (x,y)
 def line(start, end):
-    """Draw line from start to end."""
+    """Dibuja la línea dado un punto 'star' y 'end' mostrados en los paramteros"""
     up()
     goto(start.x, start.y)
     down()
@@ -25,7 +25,7 @@ def line(start, end):
 
 #Función que define la fígura cuadrado desde un punto inicial a un punto final, esta depende de los grados otorgados para que la fígura sea simétrica
 def square(start, end):
-    """Draw square from start to end."""
+    """Dibuja un cuadrado dado un punto 'star' y 'end' mostrados en los paramteros"""
     up()
     goto(start.x, start.y)
     down()
@@ -40,7 +40,7 @@ def square(start, end):
 #Función que define la fígura círculo donde las coordenadas (x,y) son usadas como el centro del círculo
 # y la distancia entre vectores es utilizada como el radio del círculo.
 def circle(start, end):
-    """Draw circle from start to end."""
+    """Dibuja un círculo dado un punto 'star' mostrados en los paramteros"""
     up()
     goto(start.x, start.y)
     down()
@@ -55,8 +55,7 @@ def circle(start, end):
 #A diferencia del cuadrado fue necesario realizar una resta entre los distintos vertices para
 #lograr la diferencia entre las dimensiones
 def rectangle(start, end):
-
-    """Draw rectangle from start to end."""
+    """Dibuja un rectangulo dado un punto 'star' y 'end' mostrados en los paramteros"""
     up()
     goto(start.x, start.y)
     down()
@@ -73,7 +72,7 @@ def rectangle(start, end):
 #Función que define la fígura triangulon recibiendo como argumentos las coordenadas iniciales y finales
 #La forma del triángulo se encuentra definida por el ángulo dado iterando la dirección en la que el lienzo dibuja
 def triangle(start, end):
-    """Draw triangle from start to end."""
+    """Dibuja un triángulo dado un punto 'star' y 'end' mostrados en los paramteros"""
     up()
     goto(start.x, start.y)
     down()
@@ -88,7 +87,8 @@ def triangle(start, end):
 
 
 def tap(x, y):
-    """Store starting point or draw shape."""
+    """Detecta cuando se ha hecho un clic y guarda el punto inicial y luego al hacer un segundo
+    clic guarda el 2do punto para realizar la forma de la figura, por lo que recibe coordenadas (x,y)"""
     # En la variable start se guarda el valor que se va a modificar en el diccionario de state
     start = state['start']
 
@@ -108,7 +108,9 @@ def tap(x, y):
 
 
 def store(key, value):
-    """Store value in state at key."""
+    """Es una función que indica que figura se hará recibiendo como parametros:
+    1. Key: La cual es el indice que busca en el diccionario state
+    2. Value: Es el valor de la key en el diccionario"""
     # El state lo evalua en la key y le asigna el valor
     # Ejemplo: state['shape'] = line
     # lo que nos dice que la función lambda en el state trabajará sobre la figura de la línea
