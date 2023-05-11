@@ -7,12 +7,13 @@ Exercises
 4. Complete triangle.
 5. Add width parameter.
 """
+#Importar las librerías necesarias
 import math
 from turtle import *
 
 from freegames import vector
 
-
+#Función que define la línea recta desde un punto inicial a un punto final definicod por cooredenadas (x,y)
 def line(start, end):
     """Dibuja la línea dado un punto 'star' y 'end' mostrados en los paramteros"""
     up()
@@ -21,6 +22,8 @@ def line(start, end):
     goto(end.x, end.y)
 
 
+
+#Función que define la fígura cuadrado desde un punto inicial a un punto final, esta depende de los grados otorgados para que la fígura sea simétrica
 def square(start, end):
     """Dibuja un cuadrado dado un punto 'star' y 'end' mostrados en los paramteros"""
     up()
@@ -34,7 +37,8 @@ def square(start, end):
 
     end_fill()
 
-
+#Función que define la fígura círculo donde las coordenadas (x,y) son usadas como el centro del círculo
+# y la distancia entre vectores es utilizada como el radio del círculo.
 def circle(start, end):
     """Dibuja un círculo dado un punto 'star' mostrados en los paramteros"""
     up()
@@ -47,6 +51,9 @@ def circle(start, end):
         left(1)
     end_fill()
 
+#Función que define la fígura rectangulo desde un punto inicial a un punto final
+#A diferencia del cuadrado fue necesario realizar una resta entre los distintos vertices para
+#lograr la diferencia entre las dimensiones
 def rectangle(start, end):
     """Dibuja un rectangulo dado un punto 'star' y 'end' mostrados en los paramteros"""
     up()
@@ -62,7 +69,8 @@ def rectangle(start, end):
 
     end_fill()
 
-
+#Función que define la fígura triangulon recibiendo como argumentos las coordenadas iniciales y finales
+#La forma del triángulo se encuentra definida por el ángulo dado iterando la dirección en la que el lienzo dibuja
 def triangle(start, end):
     """Dibuja un triángulo dado un punto 'star' y 'end' mostrados en los paramteros"""
     up()

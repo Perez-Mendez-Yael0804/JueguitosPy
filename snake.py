@@ -29,28 +29,28 @@ from turtle import *
 
 from freegames import square, vector
 
-#Ceación de vectores para cada uno de los elementos
+#Creación de vectores para cada uno de los elementos
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
-#Cambio de dirección de la serpiente
+
 def change(x, y):
-    
+    """Cambio de dirección de la serpiente"""
     aim.x = x
     aim.y = y
 
-#La cabeza de la serpiente dentro de los límites de la cuadrícula
-def inside(head):
 
+def inside(head):
+    """La cabeza de la serpiente se mantiene dentro de los límites de la cuadrícula - Recibe head"""
     return -200 < head.x < 190 and -200 < head.y < 190
 
-#Mover la serpiente hacia adelante un segmento.
+
 def move():
-  
+    """Mover la serpiente hacia adelante un segmento."""
     head = snake[-1].copy()
     head.move(aim)
-#Si la serpiente se sale de los límites se acaba el juego y la cabeza se ilumina de rojo
+    """Si la serpiente se sale de los límites se acaba el juego y la cabeza se ilumina de rojo"""
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
         update()
