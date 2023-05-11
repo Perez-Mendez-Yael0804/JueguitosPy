@@ -112,8 +112,14 @@ Para este juego las modificaciones hechas fueron:
 
 ## Despliegue 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
+Para el despliegue de los videjuegos se requiere que se le haga un clone a este repositorio, de esta manera deberás acceder a la carpeta del repositorio clonado y mediante los siguiente comandos podrás correr los videojuegos.
 
+```
+cd Carpeta_clon_repositorio
+python3 nombre_archivo.py
+```
+
+![Comando para correr el videojuego snake](https://github.com/Perez-Mendez-Yael0804/JueguitosPy/assets/72780700/97a28cac-11ab-4ab5-aeee-bf8ca1480cb4)
 
 ## Autores ✒️
 Los autores que hicieron posible este proyecto fueron:
