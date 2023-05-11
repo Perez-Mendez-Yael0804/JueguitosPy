@@ -14,17 +14,23 @@ from random import *
 from turtle import *
 from freegames import path
 
+# Se define la imagen a utilizar 
 car = path('car.gif')
+# Son los símbolos mostrados al voltear las cartas
 tiles = [
     '👻', '😱', '❤️', '😍', '😂', '👌', '😘', '😊',
     '😎', '😉', '😏', '🤩', '😅', '😁', '😶', '😗',
     '🤐', '😴', '🤗', '🤑', '🥱', '😤', '☹️', '😭', 
     '😵‍💫', '🤬', '🤯', '🤢', '🤠', '🤓', '🤡', '👽'
 ] * 2
+# Marca el estado de la casilla
 state = {'mark': None}
+# Esconde todas las casillas
 hide = [True] * 64
+# Número de clics al iniciar el juego 
 taps = 0
 
+# Hace las casillas con los bordes 
 def square(x, y):
     """Draw white square with black outline at (x, y)."""
     up()
@@ -37,16 +43,17 @@ def square(x, y):
         left(90)
     end_fill()
 
-
+# Convierte a coordenadas x y las casillas en el indice marcado
 def index(x, y):
     """Convert (x, y) coordinates to tiles index."""
     return int((x + 200) // 50 + ((y + 200) // 50) * 8)
 
-
+# Convierte en casillas las coordenadas x y
 def xy(count):
     """Convert tiles count to (x, y) coordinates."""
     return (count % 8) * 50 - 200, (count // 8) * 50 - 200
 
+# Es la función que marca cuando una casillas ha sido seleccionada 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
     global taps
@@ -60,11 +67,14 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+    # imprime cuantos taps se llevan
     print(f"Llevas {taps} clics")
 
+    # Cuando todas las casillas han sido destapadas
     if hide == [False] * 64:
         print("GANASTE")
 
+# Dibuja la imagen cuando las casillas coinciden 
 def draw():
     """Draw image and tiles."""
     clear()
@@ -72,6 +82,7 @@ def draw():
     shape(car)
     stamp()
 
+    # Se recorre la lista de las casillas verificando que estan ocultas o no
     for count in range(64):
         if hide[count]:
             x, y = xy(count)
@@ -79,6 +90,7 @@ def draw():
 
     mark = state['mark']
 
+    # Se muestra el valor de la ficha en la posición marcada
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
