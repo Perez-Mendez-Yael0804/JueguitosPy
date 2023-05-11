@@ -1,5 +1,5 @@
 ![Logo del freegames](https://pypi.org/static/images/logo-small.2a411bc6.svg) 
-## Repositorio Proyecto Freegames
+## Repositorio Proyecto Freegamesssss
 ### Herramientas computacionales: El arte de la programación 
 
 Este repositorio se caracteriza por ser una herramienta de aprendizaje para los alumnos, en la cual se trabajaron cinco códigos de la librería 'freegames' en python, 
