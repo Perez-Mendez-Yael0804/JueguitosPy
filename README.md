@@ -69,11 +69,50 @@ python3 -m freegames copy snake
 python3 snake.py
 ```
 
+## Modificaciones hechas 🛠️
+### Juego-Paint 
+Para este juego las modificaciones hechas fueron:
+<ul>
+<li>Un color nuevo</li>
+<li>Dibujar un círculo</li>
+<li>Completar el rectangulo</li>
+<li>Completar el triángulo</li>
+</ul>
+
+### Juego-Sanke
+Para este juego las modificaciones hechas fueron:
+<ul>
+<li>La comida se puede mover un paso a la vez al ser comida y  no deberá de salirse de la ventana</li>
+<li>Cada vez que se corra el juego, la víbora y la comida deberán tener colores diferentes entre sí, pero al azar, de una serie de 5 diferentes colores, excepto el rojo.</li>
+</ul>
+
+### Juego-Memory 
+Para este juego las modificaciones hechas fueron:
+<ul>
+<li>Contar y desplegar el numero de taps</li>
+<li>Detectar cuando todos los cuadros se han destapado</li>
+<li>Centrar el dígito en el cuadro</li>
+<li>Como un elmento de innovación al juego, podrías utilizar algo diferente a los dígitos para resolver el juego y que al usuario le ayude a tener mejor memoria?</li>
+</ul>
+
+### Juego-PacMan 
+Para este juego las modificaciones hechas fueron:
+<ul>
+<li>Los fantasmas sean más listos</li>
+<li>Cambiar el tablero</li>
+<li>Hacer que los fantasmas sean más rápidos</li>
+</ul>
+
+### Juego-Tiro Parabólico 
+Para este juego las modificaciones hechas fueron:
+<ul>
+<li>La velocidad del movimiento para el proyectil y los balones sea más rápida</li>
+<li>Hacer que el juego nunca termine, de manera que los balones al salir de la ventana se re posicionen.</li>
+</ul>
+
 ## Despliegue 📦
 
 _Agrega notas adicionales sobre como hacer deploy_
-
-## Modificaciones hechas 🛠️
 
 
 ## Autores ✒️
