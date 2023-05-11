@@ -14,11 +14,18 @@ from turtle import *
 
 from freegames import floor, vector
 
+# Se inicializa el state como un diccionario con una key llamada score de valor 0
+# Este es el puntaje que empieza en 0 y luego se irá modificando
 state = {'score': 0}
+# Almacena el camino que sigue el pacman
 path = Turtle(visible=False)
+#
 writer = Turtle(visible=False)
+# Indica la dirección en la que se mueve el pacman 
 aim = vector(5, 0)
+# Es la coordenada donde se encuentra
 pacman = vector(-40, -80)
+# Es la posición donde se encuentran los fantasmas 
 ghosts = [
     [vector(-180, 160), vector(5, 0)],
     [vector(-180, -160), vector(0, 5)],
@@ -50,7 +57,7 @@ tiles = [
 ]
 # fmt: on
 
-
+# Pinta los cuadros azules 
 def square(x, y):
     """Draw square using path at (x, y)."""
     path.up()
@@ -72,7 +79,7 @@ def offset(point):
     index = int(x + y * 20)
     return index
 
-
+# Valida el punto 
 def valid(point):
     """Return True if point is valid in tiles."""
     index = offset(point)
@@ -90,20 +97,31 @@ def valid(point):
 
 def world():
     """Draw world using path."""
-    bgcolor('green')
-    path.color('black')
+    # Color del fondo
+    bgcolor('black')
+    # Color del camino
+    path.color('blue')
 
+    # index en el rango del tamaño del tablero
     for index in range(len(tiles)):
+        # la variable tile se le agrega el valor del tablero en la posición 1, 2, 3...
         tile = tiles[index]
-
+        # Si la posición de tile es mayor a 0
         if tile > 0:
+            # x toma el valor de index modulo de 20 por 20 menos 200
             x = (index % 20) * 20 - 200
+            # y toma el valor de 180 - el indice entre 20 tomando el número entero multilpicado por 20
             y = 180 - (index // 20) * 20
+            # manda a llamar a la función square dandole las coordenadas x y
             square(x, y)
 
+            # Si tile es 1
             if tile == 1:
+                # El camino azul sube
                 path.up()
+                # a x se le suma 10 y a y se le suma 10
                 path.goto(x + 10, y + 10)
+                # en el camino se hace un punto de tamaño 2 y blancos
                 path.dot(2, 'white')
 
 
@@ -113,7 +131,7 @@ def move():
     writer.write(state['score'])
 
     clear()
-
+    # pacman más la posición inicial 
     if valid(pacman + aim):
         pacman.move(aim)
 
@@ -134,13 +152,16 @@ def move():
         if valid(point + course):
             point.move(course)
         else:
+            # Lista donde se tienen las posiciones de los fantasmas
             options = [
                 vector(5, 0),
                 vector(-5, 0),
                 vector(0, 5),
                 vector(0, -5),
             ]
+            # Se eleije un fantasma al que mover
             plan = choice(options)
+
             course.x = plan.x
             course.y = plan.y
 
@@ -150,27 +171,32 @@ def move():
 
     update()
 
+    # Cuando el pacman se topa con el fantasma no deja que pase mas allá del fantasma
     for point, course in ghosts:
-        if abs(pacman - point) < 20:
+        if abs(pacman - point) < 25:
             return
 
     ontimer(move, 35)
 
-
+# Cambia la dirección del pacman con las coordenadas x y 
 def change(x, y):
     """Change pacman aim if valid."""
     if valid(pacman + vector(x, y)):
         aim.x = x
         aim.y = y
 
-
+# Tamaño del tablero 
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
+# escribe la posición
 writer.goto(160, 160)
+# Escribe el color de los puntos 
 writer.color('white')
+# Escribe el score del jugador 
 writer.write(state['score'])
 listen()
+# Cambia la dirección en la que se mueve el pacman llamando a la función change
 onkey(lambda: change(5, 0), 'Right')
 onkey(lambda: change(-5, 0), 'Left')
 onkey(lambda: change(0, 5), 'Up')

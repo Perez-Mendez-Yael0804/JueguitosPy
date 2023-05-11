@@ -45,9 +45,7 @@ def circle(start, end):
     for count in range(360):
         forward(1)
         left(1)
-        
     end_fill()
-
 
 def rectangle(start, end):
 
