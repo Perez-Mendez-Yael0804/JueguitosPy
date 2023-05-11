@@ -19,8 +19,10 @@ de esta manera se pretende que los alumnos adquieran los conocimientos sobre:
 <li>PIP instalado</li>
 </ul>
 
-Primero que nada es requisito tener el python 3.X, este lo puedes descargar directamente de la siguiente liga: 
+Primero que nada es requisito tener el python 3.X, este lo puedes descargar directamente de la siguiente liga: https://www.python.org/downloads/
 
+![Instalación python](https://github.com/Perez-Mendez-Yael0804/JueguitosPy/assets/72780700/7a1dd23f-2cf3-470d-98c8-671a6ccfbdb3)
+Se debe de dar clic en Downloads, tomando en cuenta para que sistema operativo usas
 Para poder utilizar este proyecto es necesario primero instalar la librería 'freegames', puedes utilizar el CMD, el PowerShell o instalar Git.
 
 
