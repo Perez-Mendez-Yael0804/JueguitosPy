@@ -57,6 +57,9 @@ def tap(x, y):
         state['mark'] = None
     print(f"Llevas {taps} clics")
 
+    if hide == [False] * 64:
+        print("GANASTE")
+
 def draw():
     """Draw image and tiles."""
     clear()
