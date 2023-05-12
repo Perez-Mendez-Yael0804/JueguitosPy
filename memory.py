@@ -10,6 +10,13 @@ Exercises:
 5. Use letters instead of tiles.
 """
 
+"""
+Como un elmento de innovación al juego, podrías utilizar algo diferente a los dígitos para resolver el juego y que al usuario le ayude a tener mejor memoria?
+
+Un elemento de innovación que utilizamos fue la implementación de emojis en las casillas, de esta manera
+al jugador se le hará más fácil recordar cada uno de las figuras en vez de los dígitos. 
+"""
+
 from random import *
 from turtle import *
 from freegames import path
