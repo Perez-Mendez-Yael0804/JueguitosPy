@@ -19,7 +19,6 @@ from freegames import floor, vector
 state = {'score': 0}
 # Almacena el camino que sigue el pacman
 path = Turtle(visible=False)
-#
 writer = Turtle(visible=False)
 # Indica la dirección en la que se mueve el pacman 
 aim = vector(5, 0)
