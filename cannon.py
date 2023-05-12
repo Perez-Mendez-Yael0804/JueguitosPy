@@ -88,7 +88,7 @@ def move():
 
 
 setup(520, 520, 370, 0) 
-"""#Definimos las dimenciones de la ventana para que salgan y entren los objetivos"""
+"""Definimos las dimenciones de la ventana para que salgan y entren los objetivos"""
 
 hideturtle()
 up()
