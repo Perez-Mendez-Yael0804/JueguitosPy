@@ -11,8 +11,8 @@ Exercises
 #Importar random para generar números aleatorios en las variables comi y serp
 import random
 
-comi = random.randint(1, 5)
-serp = random.randint(1, 5)
+comi = random.randint(0, 4)
+serp = random.randint(0, 4)
 
 #Ciclos if que definirán el color de la comida y serpiente dependiendo del número aleatorio que toca.
 color = ['green', 'orange', 'blue', 'purple', 'yellow']
